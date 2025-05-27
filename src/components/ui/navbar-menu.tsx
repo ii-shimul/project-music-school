@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "motion/react";
+import Image from "next/image";
 
 const transition = {
 	type: "spring",
@@ -43,12 +44,14 @@ export const MenuItem = ({
 								layoutId="active" // layoutId ensures smooth animation
 								className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
 							>
-								<motion.div
-									layout // layout ensures smooth animation
-									className="w-max h-full p-4"
-								>
-									{children}
-								</motion.div>
+								{children && (
+									<motion.div
+										layout // layout ensures smooth animation
+										className="w-max h-full p-4"
+									>
+										{children}
+									</motion.div>
+								)}
 							</motion.div>
 						</div>
 					)}
@@ -88,7 +91,7 @@ export const ProductItem = ({
 }) => {
 	return (
 		<a href={href} className="flex space-x-2">
-			<img
+			<Image
 				src={src}
 				width={140}
 				height={70}
@@ -111,7 +114,7 @@ export const HoveredLink = ({ children, ...rest }: any) => {
 	return (
 		<a
 			{...rest}
-			className="text-neutral-700 dark:text-neutral-200 hover:text-black "
+			className="text-neutral-700 dark:text-neutral-200 hover:text-gray-500 "
 		>
 			{children}
 		</a>

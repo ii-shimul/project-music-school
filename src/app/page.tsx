@@ -1,5 +1,7 @@
 export default function Home() {
   return (
-    <h1 className="">Children</h1>
+    <main className="mih-h-screen bg-black/[0.96] antialiased bg-grid-white/[0.02]">
+      <h1>helooooooo</h1>
+    </main>
   );
 }
